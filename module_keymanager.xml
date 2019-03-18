@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_keymanager" default="compile.module.keymanager">
+  <dirname property="module.keymanager.basedir" file="${ant.file.module_keymanager}"/>
+  
+  <property name="module.jdk.home.keymanager" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.keymanager" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.keymanager" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.keymanager" value="-encoding UTF-8 -source 11 -target 11 ${compiler.args}"/>
+  
+  <property name="keymanager.output.dir" value="${module.keymanager.basedir}/out/production/keyManager"/>
+  <property name="keymanager.testoutput.dir" value="${module.keymanager.basedir}/out/test/keyManager"/>
+  
+  <path id="keymanager.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="keymanager.module.production.classpath">
+    <path refid="${module.jdk.classpath.keymanager}"/>
+    <path refid="library.java_ee_6-java_ee_6.classpath"/>
+  </path>
+  
+  <path id="keymanager.runtime.production.module.classpath">
+    <pathelement location="${keymanager.output.dir}"/>
+    <path refid="library.java_ee_6-java_ee_6.classpath"/>
+  </path>
+  
+  <path id="keymanager.module.classpath">
+    <path refid="${module.jdk.classpath.keymanager}"/>
+    <pathelement location="${keymanager.output.dir}"/>
+    <path refid="library.java_ee_6-java_ee_6.classpath"/>
+  </path>
+  
+  <path id="keymanager.runtime.module.classpath">
+    <pathelement location="${keymanager.testoutput.dir}"/>
+    <pathelement location="${keymanager.output.dir}"/>
+    <path refid="library.java_ee_6-java_ee_6.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.keymanager">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.keymanager">
+    <patternset refid="excluded.from.module.keymanager"/>
+  </patternset>
+  
+  <path id="keymanager.module.sourcepath">
+    <dirset dir="${module.keymanager.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.keymanager" depends="compile.module.keymanager.production,compile.module.keymanager.tests" description="Compile module keyManager"/>
+  
+  <target name="compile.module.keymanager.production" depends="register.custom.compilers" description="Compile module keyManager; production classes">
+    <mkdir dir="${keymanager.output.dir}"/>
+    <javac2 destdir="${keymanager.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.keymanager}/javac">
+      <compilerarg line="${compiler.args.keymanager}"/>
+      <bootclasspath refid="keymanager.module.bootclasspath"/>
+      <classpath refid="keymanager.module.production.classpath"/>
+      <src refid="keymanager.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.keymanager"/>
+    </javac2>
+    
+    <copy todir="${keymanager.output.dir}">
+      <fileset dir="${module.keymanager.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.keymanager.tests" depends="register.custom.compilers,compile.module.keymanager.production" description="compile module keyManager; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.keymanager" description="cleanup module">
+    <delete dir="${keymanager.output.dir}"/>
+    <delete dir="${keymanager.testoutput.dir}"/>
+  </target>
+</project>

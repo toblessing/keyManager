@@ -1,0 +1,207 @@
+
+.dialog-box .box-inner {
+	padding: 20px 30px;
+}
+
+#image_upload .upload-area .normal {
+	margin-top: 40px;
+}
+
+.btn18 {
+	font-size: 18px;
+	padding: 0 15px;
+	border-radius: 3px;
+	height: 36px;
+	line-height: 36px;
+}
+
+.btn {
+	display: inline-block;
+	line-height: 1;
+	border-radius: 2px;
+	font-size: 14px;
+	padding: 0 12px;
+	height: 28px;
+	line-height: 28px;
+	background: #ededed;
+	border: 1px solid #ededed;
+	cursor: pointer;
+	text-decoration: none;
+	color: #444;
+	white-space: nowrap;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	text-align: center;
+	box-shadow: 0 0 0 transparent;
+}
+
+a {
+	color: #222;
+	text-decoration: none;
+	outline: 0;
+}
+
+#image_upload .upload-area .note {
+	font-size: 16px;
+}
+
+#image_upload .upload-area .normal .sub {
+	color: #999;
+	line-height: 18px;
+}
+
+#image_upload .upload-area .normal .sub {
+	color: #999;
+	line-height: 18px;
+}
+
+#image_upload .upload-area .normal .sub {
+	color: #999;
+	line-height: 18px;
+}
+
+#image_upload .upload-area .draging {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	line-height: 40px;
+	height: 40px;
+	margin-top: -20px;
+}
+
+#image_upload .upload-area .note {
+	font-size: 16px;
+}
+
+#image_upload .upload-area .uploading {
+	width: 60px;
+	padding: 75px;
+	margin-top: 50px;
+	color: #999;
+	font-size: 16px;
+	margin: 60px auto 0;
+}
+
+#image_upload .uploading {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding-top: 75px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#image_upload .upload-area .dropzone {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	opacity: .0001;
+	background: #fff;
+}
+
+#image_upload .upload-area {
+	border: 2px dashed #EDEDED;
+	height: 206px;
+	text-align: center;
+	position: relative;
+	margin-top: 10px;
+}
+
+#image_upload .upload-area {
+	border: 2px dashed #EDEDED;
+	height: 206px;
+	text-align: center;
+	position: relative;
+	margin-top: 10px;
+}
+
+#image_upload .links .part {
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+
+.brown-link {
+	color: #9E7E6B;
+}
+
+#image_upload .links .part .description {
+	margin-top: 10px;
+	color: #999;
+}
+
+#image_upload .links .part {
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+
+.brown-link {
+	color: #9E7E6B;
+}
+
+#image_upload .links .part .description {
+	margin-top: 10px;
+	color: #999;
+}
+
+.dialog-box .close-btn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+
+.dialog-box .close-btn i {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -10px 0 0 -10px;
+}
+
+.dialog-box .box-title {
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	border-bottom: 1px solid #EDEDED;
+	position: relative;
+	padding-left: 30px;
+	box-sizing: border-box;
+	color: #222;
+}
+
+#image_upload .upload-area {
+	border: 2px dashed #EDEDED;
+	height: 206px;
+	text-align: center;
+	position: relative;
+	margin-top: 10px;
+}
+
+#image_upload {
+	height: 380px;
+	margin-top: -190px;
+}
+
+.dialog-box {
+	background: #FFF;
+	width: 580px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -220px 0 0 -290px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+	border-radius: 1px;
+}
