@@ -1,4 +1,4 @@
-<%@ page import="java.util.*" %>
+<%@ page import="java.util.Date" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -7,7 +7,7 @@
   Time: 17:18
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 <html>
 <head>
     <title>AutoLook 激活码后台管理</title>
@@ -22,14 +22,14 @@
     <form action="Login" method="post">
         <table style="margin-top: 5%;" cellspacing="20px">
             <tr>
-                <td>用户名:</td>
-                <td>
-                    <input required pattern="[A-z]+" id="username" name="username" type="text"/>
+                <td colspan="2">
+                    <label for="username">用户名:</label>
+                    <input required pattern="[A-z]+" id="username" name="username" type="text">
                 </td>
             </tr>
             <tr>
-                <td>密码：</td>
-                <td>
+                <td colspan="2">
+                    <label for="password">用户名:</label>
                     <input required id="password" name="password" type="password"/>
                 </td>
             </tr>
