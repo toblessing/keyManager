@@ -1,7 +1,7 @@
 package valuebean;
 
 public class ActivationCode {
-    private String code;
+    private String activationCode;
     private String exdate;
     private String user;
     private String admin;
@@ -9,8 +9,8 @@ public class ActivationCode {
     private int unavailable;
     private boolean enabled;
 
-    public ActivationCode(String code, String exdate, String user, String admin, int available, int unavailable, boolean enabled) {
-        this.code = code;
+    public ActivationCode(String activationCode, String exdate, String user, String admin, int available, int unavailable, boolean enabled) {
+        this.activationCode = activationCode;
         this.exdate = exdate;
         this.user = user;
         this.admin = admin;
@@ -19,8 +19,8 @@ public class ActivationCode {
         this.enabled = enabled;
     }
 
-    public ActivationCode(String code, String exdate, String user, String admin, int available, int unavailable) {
-        this.code = code;
+    public ActivationCode(String activationCode, String exdate, String user, String admin, int available, int unavailable) {
+        this.activationCode = activationCode;
         this.exdate = exdate;
         this.user = user;
         this.admin = admin;
@@ -28,8 +28,8 @@ public class ActivationCode {
         this.unavailable = unavailable;
     }
 
-    public ActivationCode(String code, int available) {
-        this.code = code;
+    public ActivationCode(String activationCode, int available) {
+        this.activationCode = activationCode;
         this.available = available;
     }
 
@@ -42,12 +42,12 @@ public class ActivationCode {
         this.enabled = enabled;
     }
 
-    public String getCode() {
-        return code;
+    public String getActivationCode() {
+        return activationCode;
     }
 
-    public void setCode(String key) {
-        this.code = key;
+    public void setActivationCode(String key) {
+        this.activationCode = key;
     }
 
     public String getExdate() {

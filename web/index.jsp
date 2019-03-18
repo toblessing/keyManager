@@ -12,7 +12,9 @@
 <head>
     <title>AutoLook 激活码后台管理</title>
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios/50/000000/grades.png" />
-    <link type="text/css" href="css/manageKey.css?<%=new Date().getTime()%>" rel="stylesheet">
+    <link type="text/css" href="css/basis.css?<%=new Date().getTime()%>" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/basis.js"></script>
 </head>
 <body>
 <div>
@@ -29,7 +31,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <label for="password">用户名:</label>
+                    <label for="password">密码:</label>
                     <input required id="password" name="password" type="password"/>
                 </td>
             </tr>

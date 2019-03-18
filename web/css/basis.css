@@ -7,6 +7,9 @@
     margin: 0px;
 }
 
+#loading {
+    margin: 8px;
+}
 table {
     margin-left: auto;
     margin-right: auto;

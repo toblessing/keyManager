@@ -5,14 +5,16 @@
   Time: 21:38
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="java.util.*" %>
 <%@ page import="valuebean.ActivationCode" %>
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>AutoLook 激活码后台管理</title>
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios/50/000000/grades.png" />
-    <link type="text/css" href="css/manageKey.css?<%=new Date().getTime()%>" rel="stylesheet">
+    <link type="text/css" href="css/basis.css?<%=new Date().getTime()%>" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/basis.js"></script>
 
 </head>
 <body>
@@ -45,7 +47,8 @@
             </tr>
             <tr>
                 <td>激活码:</td>
-                <td><%=activationCode.getCode() %></td>
+                <td><%=activationCode.getActivationCode() %>
+                </td>
             </tr>
             <tr>
                 <td>到期时间:</td>
@@ -70,7 +73,7 @@
 
             <tr>
                 <td colspan="2" style="text-align:center;">
-                    <a class="link_button" href="javascript:history.go(-1);">返回</a>
+                    <a class="link_button" onclick="back()">返回</a>
                     <a class="link_button" href="manageKey">主页</a>
                 </td>
             </tr>

@@ -15,7 +15,7 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
 
         if(FactoryDao.getUserDaoInstance().login(user)){
             request.getSession().setAttribute("user",user);
-            response.sendRedirect("manageKey");
+            response.sendRedirect("manageKey.jsp");
         }else{
             request.setAttribute("msg","用户名或者密码错误！");
             request.getRequestDispatcher("index.jsp").forward(request,response);

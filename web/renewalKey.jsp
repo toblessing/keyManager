@@ -5,14 +5,16 @@
   Time: 21:38
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="java.util.*" %>
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>AutoLook 激活码后台管理</title>
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios/50/000000/grades.png" />
-    <link type="text/css" href="css/manageKey.css?<%=new Date().getTime()%>" rel="stylesheet">
+    <link type="text/css" href="css/basis.css?<%=new Date().getTime()%>" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/basis.js"></script>
 
 </head>
 <body>
@@ -46,8 +48,8 @@
                 <tr>
                     <td>激活码：</td>
                     <td>
-                        <input readonly  name="code" type="text"
-                               required value="<%=request.getParameter("code")%>"/>
+                        <input readonly name="activationCode" type="text"
+                               required value="<%=request.getParameter("activationCode")%>"/>
                     </td>
                 </tr>
                 <tr>
@@ -72,7 +74,7 @@
 
                 <tr>
                     <td colspan="2" style="text-align:center;">
-                        <input class="link_button" type="button" onclick="javascript:history.go(-1);" value="返回"/>
+                        <input class="link_button" type="button" onclick="back()" value="返回"/>
                         <input  id="sub" type="submit" value="续费"/>
                     </td>
                 </tr>

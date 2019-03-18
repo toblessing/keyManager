@@ -5,7 +5,6 @@ import bean.Tools;
 import dbc.DataBaseConnection;
 import valuebean.ActivationCode;
 
-import javax.tools.Tool;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -143,7 +142,7 @@ public class ActivationCodeDaoImpl implements ActivationCodeDao {
         ActivationCode result = null;
 
         //获取原来的code数据
-        ActivationCode lastCode = checkCode(activationCode.getCode());
+        ActivationCode lastCode = checkCode(activationCode.getActivationCode());
         int available=activationCode.getAvailable();
         String exdate;
         String sql = "update activationcode set exdate=?,available=available+? where code=?";
@@ -153,8 +152,8 @@ public class ActivationCodeDaoImpl implements ActivationCodeDao {
         } else {
             exdate = Tools.getDateOfAfter(day);
         }
-        if (dbc.exeUpdate(sql, exdate,available, activationCode.getCode())){
-            result = checkCode(activationCode.getCode());
+        if (dbc.exeUpdate(sql, exdate, available, activationCode.getActivationCode())) {
+            result = checkCode(activationCode.getActivationCode());
         }
         return result;
     }

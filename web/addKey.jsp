@@ -5,15 +5,16 @@
   Time: 21:38
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="java.util.*" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.Date" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>AutoLook 激活码后台管理</title>
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios/50/000000/grades.png" />
-    <link type="text/css" href="css/manageKey.css?<%=new Date().getTime()%>" rel="stylesheet">
-
+    <link type="text/css" href="css/basis.css?<%=new Date().getTime()%>" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/basis.js"></script>
 </head>
 <body>
 <%
@@ -44,9 +45,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td> 有效期:</td>
-                    <td>
-                        <select name="exdate">
+                    <td colspan="2">
+                        <label for="exdate">有效期:</label>
+                        <select id="exdate" name="exdate">
                             <option value="0.021">30分钟</option>
                             <option selected value="1">1天</option>
                             <option value="15">15天</option>
@@ -56,20 +57,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>数量：</td>
-                    <td>
-                        <input min="1" name="number" value="1" type="number" required/>
+
+                    <td colspan="2">
+                        <label for="number">数量:</label>
+                        <input min="1" id="number" name="number" value="1" type="number" required/>
                     </td>
                 </tr>
                 <tr>
-                    <td>用户名：</td>
-                    <td>
-                        <input placeholder="用户名必须为字母" name="username" type="text" required pattern="[A-z]+"/>
+                    <td colspan="2">
+                        <label for="username">用户名:</label>
+                        <input id="username" placeholder="用户名必须为字母" name="username" type="text" required
+                               pattern="[A-z]+"/>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align:center;">
-                        <input class="link_button" type="button" onclick="javascript:history.go(-1);" value="返回"/>
+                        <input class="link_button" type="button" onclick="back()" value="返回"/>
                         <input id="sub" type="submit" value="发放"/>
                     </td>
                 </tr>
