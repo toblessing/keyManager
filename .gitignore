@@ -7,7 +7,7 @@
 *.iml
 out
 gen
-#/src/bean/DBConnection.java
+/src/bean/DBConnection.java
 out
 .idea
 
