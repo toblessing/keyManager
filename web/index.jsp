@@ -24,14 +24,18 @@
     <form action="Login" method="post">
         <table style="margin-top: 5%;" cellspacing="20px">
             <tr>
-                <td colspan="2">
+                <td>
                     <label for="username">用户名:</label>
+                </td>
+                <td>
                     <input required pattern="[A-z]+" id="username" name="username" type="text">
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td>
                     <label for="password">密码:</label>
+                </td>
+                <td>
                     <input required id="password" name="password" type="password"/>
                 </td>
             </tr>

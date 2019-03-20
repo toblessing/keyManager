@@ -57,15 +57,18 @@
                     </td>
                 </tr>
                 <tr>
-
-                    <td colspan="2">
+                    <td>
                         <label for="number">数量:</label>
+                    </td>
+                    <td>
                         <input min="1" id="number" name="number" value="1" type="number" required/>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td>
                         <label for="username">用户名:</label>
+                    </td>
+                    <td>
                         <input id="username" placeholder="用户名必须为字母" name="username" type="text" required
                                pattern="[A-z]+"/>
                     </td>

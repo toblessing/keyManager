@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>AutoLook 激活码后台管理</title>
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios/50/000000/grades.png" />
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/ios/50/000000/grades.png"/>
     <link type="text/css" href="css/basis.css?<%=new Date().getTime()%>" rel="stylesheet">
     <link type="text/css" href="css/popup.css?<%=new Date().getTime()%>" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
@@ -38,10 +38,21 @@
         <div>
             <table id="codeTable" border="1" cellspacing="0">
                 <tr>
-                    <th>激活码</th>
+                    <th id="thCodeText">激活码<img class="mic-ico" onclick="showSearchCode()"
+                                                src="https://img.icons8.com/material/24/000000/search.png"></th>
+                    <th id="thCodeInput" hidden><input class='input-underline search' placeholder='筛选激活码'
+                                                       id='searchCode'
+                                                       type="text">
+                        <img class="mic-ico" onclick="hideSearchCode()"
+                             src="https://img.icons8.com/small/16/000000/cancel.png"></th>
                     <th>到期时间</th>
-                    <th id="thUser">购买人<img onclick="searchUser()"
-                                            src="https://img.icons8.com/material/24/000000/search.png"></th>
+                    <th id="thUserText">购买人<img class="mic-ico" onclick="showSearchUser()"
+                                                src="https://img.icons8.com/material/24/000000/search.png"></th>
+                    <th id="thUserInput" hidden><input class='input-underline search' placeholder='筛选用户名'
+                                                       id='searchUser'
+                                                       type="text">
+                        <img class="mic-ico" onclick="hideSearchUser()"
+                             src="https://img.icons8.com/small/16/000000/cancel.png"></th>
                     <th>发放人</th>
                     <th>剩余激活次数</th>
                     <th>已激活次数</th>

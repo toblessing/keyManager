@@ -34,6 +34,11 @@ table {
     background-color: #efefef;
 }
 
+.mic-ico {
+    width: 15px;
+    vertical-align: inherit;
+    cursor: pointer;
+}
 #map {
     text-align: center;
     padding-right: 10px;
@@ -46,6 +51,7 @@ select {
 table[border="1"] td, th {
     padding: 5px 15px;
     text-align: center;
+    width: 200px;
 }
 
 #tool {
