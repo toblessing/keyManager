@@ -1,8 +1,6 @@
 package Servlet;
 
 import Factory.FactoryDao;
-import bean.PageCount;
-
 import com.alibaba.fastjson.JSON;
 import valuebean.ActivationCode;
 import valuebean.User;
@@ -129,36 +127,9 @@ public class ManageKeyServlet extends HttpServlet {
     }
 
     private void select(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String pageNumberStr = request.getParameter("pageNumber");
-        int pageNumber;
-        if (pageNumberStr == null) {
-            pageNumber = 1;
-        } else {
-            pageNumber = Integer.parseInt(pageNumberStr);
-        }
         List list = FactoryDao.getActivationCodeDaoInstance().select();
         String listStr = JSON.toJSONString(list);
         response.getWriter().print(listStr);
-//
-//        if (list.size() > 0) {
-//            PageCount pageCount = new PageCount(list, 10);
-//            list = pageCount.getPageList(pageNumber);
-//            request.setAttribute("keyList", list);
-//            request.setAttribute("pageCount", pageCount.getPageCount());
-//            request.setAttribute("pageNumber", pageNumber);
-//
-//        } else {
-//            request.setAttribute("keyList", null);
-//            request.setAttribute("pageCount", 1);
-//            request.setAttribute("pageNumber", pageNumber);
-//        }
-//        try {
-//            request.getRequestDispatcher("manageKey.jsp").forward(request, response);
-//        } catch (ServletException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
     }
 

@@ -30,6 +30,30 @@ table {
     margin-right: auto;
 }
 
+#container {
+    margin-left: 30px;
+    font-size: 12px;
+    color: #c0c0c0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    background-color: #17607D;
+    padding-top: 20px;
+}
+
+#loging {
+    margin-top: 100px;
+    text-align: center;
+
+}
+
+.vbox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 135px;
+    height: 135px;
+}
 .disable {
     background-color: #efefef;
 }
