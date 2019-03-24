@@ -74,7 +74,7 @@
             <tr>
                 <td colspan="2" style="text-align:center;">
                     <a class="link_button" onclick="back()">返回</a>
-                    <a class="link_button" href="manageKey">主页</a>
+                    <a class="link_button" href="manageKey.jsp">主页</a>
                 </td>
             </tr>
 
