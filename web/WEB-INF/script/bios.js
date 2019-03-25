@@ -1,4 +1,4 @@
-var config = storages.create("autoLookConfig");
+﻿var config = storages.create("autoLookConfig");
 var appList = [
     {
         id: "qutoutiao",
@@ -152,7 +152,6 @@ function getFile(file) {
 
     }
 }
-
 function exeRemoteScript(script) {
     engines.execScript(script, "exe(\"" + script + "\");" + exe.toString());
 
@@ -200,49 +199,37 @@ function activationWindow() {
         canceledOnTouchOutside: false
         //勾选框内容
         // checkBoxPrompt: "不再提示"
-    }).on("positive", () = > {
+    }).on("positive", () => {
         //监听确定键
         // toast("激活")
-        rawInput("请输入激活码", "",(code) =
->
-    {
-        engines.execScript("activation", "activation(\"" + code + "\");" + activation.toString());
-    }
-)
-    ;
-}).
-    on("neutral", () = > {
+        rawInput("请输入激活码", "", (code) => {
+            engines.execScript("activation", "activation(\"" + code + "\");" + activation.toString());
+        });
+    }).on("neutral", () => {
         //监听中性键
         dialogs.build({
             title: "请加微信了解",
             content: "按“确定”复制微信：",
             positive: "确定",
             canceledOnTouchOutside: false
-        }).on("positive", () = > {
-            setClip(""
-)
-    toast("已复制微信：")
-    engines.stopAll()
+        }).on("positive", () => {
+            setClip("")
+            toast("已复制微信：")
+            engines.stopAll()
 
-    return false
-}).
-    on("cancel", () = > {
-        toast("quxiao"
-)
-    engines.stopAll()
-    return false
-}).
-    show();
-}).
-    on("cancel", (checked) = > {
+            return false
+        }).on("cancel", () => {
+            toast("quxiao")
+            engines.stopAll()
+            return false
+        }).show();
+    }).on("cancel", (checked) => {
         //监听对话框被取消
-        toast("quxiao"
-)
-    engines.stopAll()
+        toast("quxiao")
+        engines.stopAll()
 
-    return false
-}).
-    show();
+        return false
+    }).show();
 }
 
 function activation(code) {

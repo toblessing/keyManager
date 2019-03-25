@@ -1,4 +1,4 @@
-var historyTitle = new Array();
+﻿var historyTitle = new Array();
 if (device.sdkInt < 24) {
     var swipe = Swipe
 }

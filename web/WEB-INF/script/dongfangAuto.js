@@ -1,4 +1,4 @@
-if (device.sdkInt < 24) {
+﻿if (device.sdkInt < 24) {
     var swipe = Swipe
 }
 

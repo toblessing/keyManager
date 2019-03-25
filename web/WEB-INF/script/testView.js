@@ -1,73 +1,37 @@
-"ui";
+﻿"ui";
 
 mainView();
-
 function mainView() {
 
     ui.layout(
-    < scroll >
-    < vertical
-    id = "root" >
-        < text
-    textStyle = "bold"
-    margin = "20"
-    gravity = "center_horizontal"
-    textSize = "30sp"
-    text = "AutoLook自动阅读网赚测试界面" / >
-        < horizontal >
-        < grid
-    id = "selectList" >
-        < checkbox
-    id = "{{id}}Select"
-    w = "100"
-    h = "50"
-    checked = "{{open}}"
-    text = "{{appName}}"
-    clickable = "false" / >
-        < /grid>
-        < grid
-    id = "settingList" >
-        < button
-    id = "{{id}}Setting"
-    layout_gravity = "right"
-    h = "50"
-    text = "设置"
-    margin = "2" / >
-        < /grid>
-        < grid
-    id = "appList" >
-        < button
-    id = "{{id}}"
-    layout_gravity = "right"
-    h = "50"
-    text = "启动"
-    margin = "2" / >
-        < /grid>
-        < /horizontal>
-        < horizontal >
-        < text
-    id = "notion"
-    text = "" / >
-        < button
-    id = "clear"
-    layout_gravity = "right"
-    text = "重置记录" / >
+        <scroll>
+            <vertical id="root">
+                <text textStyle="bold" margin="20" gravity="center_horizontal" textSize="30sp"
+                      text="AutoLook自动阅读网赚测试界面"/>
+                <horizontal>
+                    <grid id="selectList">
+                        <checkbox id="{{id}}Select" w="100" h="50" checked="{{open}}" text="{{appName}}"
+                                  clickable="false"/>
+                    </grid>
+                    <grid id="settingList">
+                        <button id="{{id}}Setting" layout_gravity="right" h="50" text="设置" margin="2"/>
+                    </grid>
+                    <grid id="appList">
+                        <button id="{{id}}" layout_gravity="right" h="50" text="启动" margin="2"/>
+                    </grid>
+                </horizontal>
+                <horizontal>
+                    <text id="notion" text=""/>
+                    <button id="clear" layout_gravity="right" text="重置记录"/>
 
-        < /horizontal >
-        < text
-    id = "notion2"
-    text = "" / >
-        < button
-    id = "auto"
-    text = "自动运行" / >
-        < button
-    id = "restart"
-    text = "更新并重启" / >
+                </horizontal>
+                <text id="notion2" text=""/>
+                <button id="auto" text="自动运行"/>
+                <button id="restart" text="更新并重启"/>
 
-        < /vertical>
-        < /scroll>
-)
-    ;
+            </vertical>
+        </scroll>
+    );
 }
 
 var config = storages.create("autoLookConfig")
@@ -92,7 +56,7 @@ if (config.contains("passMin") && config.contains("lastApp")) {
 
 //设置监听器
 ui.selectList.on("item_click", function (app, seNum, view) {
-    if (view.isChecked() == true) {
+    if (view.isChecked()) {
         setAppOpen(app.id, true)
     } else {
         setAppOpen(app.id, false)

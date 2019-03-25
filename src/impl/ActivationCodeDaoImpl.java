@@ -63,8 +63,12 @@ public class ActivationCodeDaoImpl implements ActivationCodeDao {
             code = user + randomCode();
         }
         sql = "insert into activationcode values(?,?,?,?,?,?)";
-        if (dbc.exeUpdate(sql, code, exdateStr, user, admin, number, 0)) {
-            activationCode = new ActivationCode(code, exdateStr, user, admin, number, 0);
+        try {
+            if (dbc.exeUpdate(sql, code, exdateStr, user, admin, number, 0)) {
+                activationCode = new ActivationCode(code, exdateStr, user, admin, number, 0);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return activationCode;
     }
@@ -152,8 +156,12 @@ public class ActivationCodeDaoImpl implements ActivationCodeDao {
         } else {
             exdate = Tools.getDateOfAfter(day);
         }
-        if (dbc.exeUpdate(sql, exdate, available, activationCode.getActivationCode())) {
-            result = checkCode(activationCode.getActivationCode());
+        try {
+            if (dbc.exeUpdate(sql, exdate, available, activationCode.getActivationCode())) {
+                result = checkCode(activationCode.getActivationCode());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return result;
     }

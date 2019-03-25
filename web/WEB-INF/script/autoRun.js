@@ -1,4 +1,4 @@
-var sc
+﻿var sc
 var config = storages.create("autoLookConfig");
 
 var appList = config.get("appList")
@@ -34,12 +34,10 @@ function getmin() {
     return ((date.getTime() / 60000) >> 0) + 3 * 60
 
 }
-
 function geth() {
     return new Date().getHours()
 
 }
-
 function delayStop(sc, h) {
     var passMin
     if (config.contains("passMin")) {

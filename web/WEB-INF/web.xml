@@ -23,6 +23,10 @@
         <servlet-name>getScriptServlet</servlet-name>
         <servlet-class>Servlet.GetScriptServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>scriptServlet</servlet-name>
+        <servlet-class>Servlet.SetScriptServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -42,6 +46,10 @@
     <servlet-mapping>
         <servlet-name>getScriptServlet</servlet-name>
         <url-pattern>/getScript</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>scriptServlet</servlet-name>
+        <url-pattern>/setScript</url-pattern>
     </servlet-mapping>
 
 </web-app>
