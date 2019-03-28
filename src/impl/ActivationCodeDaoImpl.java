@@ -153,12 +153,16 @@ public class ActivationCodeDaoImpl implements ActivationCodeDao {
 
         if (lastCode != null) {
             exdate = Tools.getDateAddDay(lastCode.getExdate(), day);
+            System.out.println("not null");
         } else {
             exdate = Tools.getDateOfAfter(day);
+            System.out.println("is null");
         }
+
         try {
             if (dbc.exeUpdate(sql, exdate, available, activationCode.getActivationCode())) {
                 result = checkCode(activationCode.getActivationCode());
+                System.out.println("修改成功");
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -34,7 +34,7 @@ public class ManageKeyServlet extends HttpServlet {
     }
 
     private void renewalKey(HttpServletRequest request, HttpServletResponse response) {
-        String code = request.getParameter("code");
+        String code = request.getParameter("activationCode");
         float day = Float.parseFloat(request.getParameter("exdate"));
         int number = Integer.parseInt(request.getParameter("number"));
         ActivationCode activationCode = new ActivationCode(code, number);

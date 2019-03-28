@@ -29,10 +29,8 @@ public class GetScriptServlet extends HttpServlet {
             }
         }
 
-        if (request != null) {
+        if (result != null) {
             response.getWriter().print(result);
-        } else {
-            response.getWriter().print("false");
         }
 
     }
